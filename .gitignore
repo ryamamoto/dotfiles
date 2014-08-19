@@ -1,0 +1,22 @@
+# .(ドット)で始まるファイル
+.*
+
+# Thumbnails
+._*
+
+# gitignoreは無視しない
+!/.gitignore
+
+# NeoBundleプラグイン
+_vim/bundle/
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Files that might appear on external disk
+.Trashes
+.Spotlight-V100
+

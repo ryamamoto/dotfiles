@@ -1,0 +1,17 @@
+if has('gui_macvim')
+    set showtabline=2           " タブを常に表示
+    set imdisable               " IMEを無効化
+    set transparency=5          " 透明度を指定
+    set antialias               " アンチエイリアスを有効に
+    set number                  " 行番号を表示
+    set guioptions-=T           " ツールバーを非表示
+    set guifont=Osaka-Mono:h12  " フォント設定
+    set guifontwide=Osaka:h12   " フォント設定
+    set tabstop=4               " タブサイズ
+    set nobackup                " バックアップ無し
+    set lines=60                " ウインドウ行数
+    set columns=150"            " ウインドウ横幅
+    colorscheme desert          " カラースキーマ
+    set visualbell t_vb=        " ビープ音なし
+endif
+
