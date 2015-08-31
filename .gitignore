@@ -7,9 +7,6 @@
 # gitignoreは無視しない
 !/.gitignore
 
-# NeoBundleプラグイン
-_vim/bundle/
-
 # Mac OS X
 .DS_Store
 .AppleDouble
@@ -20,3 +17,10 @@ Icon
 .Trashes
 .Spotlight-V100
 
+# Ignore other unneeded files.
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret

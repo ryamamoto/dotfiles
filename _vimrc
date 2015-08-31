@@ -28,13 +28,6 @@ set history=10000          "コマンド、検索パターンを10000件まで�
 set background=dark
 colorscheme solarized
 
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"set background=dark
-
-"colorscheme jellybeans
-
 
 "#######################
 " 表示系
@@ -49,8 +42,6 @@ set showmatch               "対応する括弧をハイライト表示
 set laststatus=2            "ステータスラインを常に表示
 set textwidth=0             "行の折り返しをしない
 set wrap                    "画面幅で折り返す
-"set list                    "不可視文字を表示
-"set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 
 
 "#######################
@@ -82,50 +73,4 @@ autocmd! BufNewFile,BufRead *.t setf perl
 autocmd! BufNewFile,BufRead *.psgi setf perl
 autocmd! BufNewFile,BufRead *.tt setf tt2html
 augroup END
-
-
-"#######################
-" vimプラグイン管理ツール
-"#######################
-filetype off            " ファイルタイプの自動検出、ファイルタイプ用のプラグイン/インデント設定の自動読み込みOFF
-
-if has('vim_starting')
-    set nocompatible
-    set runtimepath+=~/dotfiles/_vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/dotfiles/_vim/bundle/'))
-endif
-
-call neobundle#begin(expand('~/dotfiles/_vim/bundle/'))
-
-" NeoBundle自身をインストール
-NeoBundleFetch 'Shougo/neobundle.vim'
-" 読み込むプラグインを指定
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimshell'
-" 環境別にvimprocをコンパイルする
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-\ }
-
-" インストールされていないプラグインのチェックおよびダウンロード
-NeoBundleCheck
-
-" VimFiler設定(デフォルトでIDE風のFilerを開く)
-"autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
-
-" VimFiler設定(新しいタブを開いてファイルを編集)
-let g:vimfiler_edit_action = 'tabopen'
-
-" ファイルタイププラグイン/インデントを有効化
-" これはNeoBundleによる処理が終了した後に呼びださなければいけない
-filetype plugin indent on    
-filetype indent on
-
-
 
